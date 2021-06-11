@@ -1,36 +1,36 @@
 <template>
   <div class="control my-4">
     <label>
-      <input type="radio" value="300" v-model="time" @click="startTimer" />
+      <input type="radio" value="300" v-model="time" @click="startTimer"/>
       <span> 5 </span>
     </label>
     <label>
-      <input type="radio" value="900" v-model="time" @click="startTimer" />
+      <input type="radio" value="900" v-model="time" @click="startTimer"/>
       <span>15</span>
     </label>
     <label>
-      <input type="radio" value="1500" v-model="time" @click="startTimer" />
+      <input type="radio" value="1500" v-model="time" @click="startTimer"/>
       <span>25</span>
     </label>
   </div>
   <div class="base-timer">
     <svg
-      class="base-timer__svg"
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
+        class="base-timer__svg"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
     >
       <g class="base-timer__circle">
         <circle
-          class="base-timer__path-elapsed"
-          cx="50"
-          cy="50"
-          r="45"
+            class="base-timer__path-elapsed"
+            cx="50"
+            cy="50"
+            r="45"
         ></circle>
         <path
-          :stroke-dasharray="circleDasharray"
-          class="base-timer__path-remaining"
-          :class="remainingPathColor"
-          d="
+            :stroke-dasharray="circleDasharray"
+            class="base-timer__path-remaining"
+            :class="remainingPathColor"
+            d="
             M 50, 50
             m -45, 0
             a 45,45 0 1,0 90,0
@@ -43,18 +43,18 @@
   </div>
   <div class="buttons is-centered">
     <button
-      class="button is-primary is-rounded is-inverted is-outlined"
-      disabled
-      @click="stopTimer"
-      id="stop"
+        class="button is-primary is-rounded is-inverted is-outlined"
+        disabled
+        @click="stopTimer"
+        id="stop"
     >
       <i class="fa fa-stop"></i>
     </button>
     <button
-      class="button is-primary is-rounded is-inverted is-outlined"
-      disabled
-      @click="playPauseTimer"
-      id="playPause"
+        class="button is-primary is-rounded is-inverted is-outlined"
+        disabled
+        @click="playPauseTimer"
+        id="playPause"
     >
       <i class="fa fa-play"></i>/<i class="fa fa-pause"></i>
     </button>
@@ -87,7 +87,7 @@ export default {
       timePassed: 0,
       timerInterval: null,
       soundurl:
-        "http://soundbible.com/mp3/analog-watch-alarm_daniel-simion.mp3",
+          "http://soundbible.com/mp3/analog-watch-alarm_daniel-simion.mp3",
       isPaused: false,
     };
   },
@@ -123,7 +123,7 @@ export default {
     },
 
     remainingPathColor() {
-      const { alert, warning, info } = COLOR_CODES;
+      const {alert, warning, info} = COLOR_CODES;
 
       if (this.timeLeft <= alert.threshold) {
         return alert.color;
@@ -162,12 +162,12 @@ export default {
       this.onTimesUp();
       this.timePassed = 0;
       this.timerInterval = setInterval(
-        function () {
-          if (!this.isPaused) {
-            this.timePassed++;
-          }
-        }.bind(this),
-        1000
+          function () {
+            if (!this.isPaused) {
+              this.timePassed++;
+            }
+          }.bind(this),
+          1000
       );
     },
 
@@ -207,12 +207,14 @@ export default {
   appearance: none;
   -webkit-appearance: none;
 }
+
 .control label input[type="radio"]:checked ~ span {
   color: #00fff1;
   box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 6px rgba(0, 0, 0, 1);
+  inset 2px 2px 6px rgba(0, 0, 0, 1);
   text-shadow: 0 0 5px #00fff1, 0 0 20px #00fff1;
 }
+
 .control label span {
   position: relative;
   padding: 10px;
@@ -223,13 +225,14 @@ export default {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
-    2px 2px 6px rgba(0, 0, 0, 0.8);
+  2px 2px 6px rgba(0, 0, 0, 0.8);
 }
+
 .control label span:hover {
   box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
-    2px 2px 6px rgba(0, 0, 0, 0.8),
-    inset -2px -2px 10px rgba(255, 255, 255, 0.05),
-    inset 2px 2px 10px rgba(0, 0, 0, 0.8);
+  2px 2px 6px rgba(0, 0, 0, 0.8),
+  inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+  inset 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 </style>
 

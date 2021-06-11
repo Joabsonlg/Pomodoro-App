@@ -8,9 +8,9 @@
             <a class="navbar-item">
               <figure class="image is-64x64">
                 <img
-                  src="./assets/logo.png"
-                  alt="Logo"
-                  style="max-height: 100%"
+                    src="./assets/logo.png"
+                    alt="Logo"
+                    style="max-height: 100%"
                 />
               </figure>
             </a>
@@ -23,7 +23,7 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title">Pomodoro APP</h1>
-        <Timer />
+        <Timer/>
       </div>
     </div>
 
@@ -34,29 +34,22 @@
           <ul>
             <li class="is-active">
               <a
-                target="_blank"
-                href="https://github.com/joabsonlg/Landing-Page"
-                >Code</a
+                  target="_blank"
+                  href="https://github.com/joabsonlg/Landing-Page"
+              >Code</a
               >
             </li>
             <li class="is-active">
-              <a
-                target="_blank"
-                href="https://github.com/joabsonlg/Landing-Page"
-                >Vuetify Landing Page</a
-              >
+              <a target="_blank" href="https://github.com/joabsonlg/Landing-Page">Vuetify Landing Page</a>
             </li>
             <li class="is-active">
-              <a
-                target="_blank"
-                href="https://github.com/joabsonlg/to-doListAPI"
-                >To-Do List API</a
-              >
+              <a target="_blank" href="https://v3.vuejs.org/">VUE</a>
             </li>
             <li class="is-active">
-              <a target="_blank" href="https://github.com/joabsonlg/vue3props"
-                >Vue 3 Props</a
-              >
+              <a target="_blank" href="https://vitejs.dev/">Vite</a>
+            </li>
+            <li class="is-active">
+              <a target="_blank" href="https://bulma.io/">Bulma</a>
             </li>
           </ul>
         </div>
@@ -64,13 +57,10 @@
     </div>
   </section>
 </template>
-<script>
-import Timer from "./components/Timer.vue";
 
-export default {
-  name: "App",
-  components: {
-    Timer,
-  },
-};
+<script setup>
+import Timer from './components/Timer.vue'
+
+// This starter template is using Vue 3 experimental <script setup> SFCs
+// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
